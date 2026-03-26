@@ -1,79 +1,80 @@
 body {
-    background: #86a5a9;
-    color: #d4ce46;
-    padding: 10px;
-    font-family: Arial, sans-serif;
+  background: #86a5a9;
+  color: #d4ce46;
+  padding: 10px;
+  font-family: Arial, sans-serif;
 }
 
 #all-contents {
-    max-width: 800px;
-    margin: auto;
+  max-width: 800px;
+  margin: auto;
 }
 
 /* navigation menu */
 nav {
-    background: #92c582;
-    margin: 0 auto;
-    display: flex;
-    padding: 10px;
-    margin-bottom: 20px;
+  background: #92c582;
+  margin: 0 auto;
+  display: flex;
+  padding: 10px;
+  margin-bottom: 20px;
 }
 
 h1 {
-    display: flex;
-    align-items: center;
-    color: #536f50;
-    flex: 1;
-    margin: 0;
+  display: flex;
+  align-items: center;
+  color: #536f50;
+  flex: 1;
+  margin: 0;
 }
 
 #nav-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
 .nav-li {
-    display: inline-block;
-    padding: 0 10px;
+  display: inline-block;
+  padding: 0 10px;
 }
 
 a {
-    text-decoration: none;
-    color: #3c66cc;
+  text-decoration: none;
+  color: #3c66cc;
 }
 
 /* main container area beneath menu */
 main {
-    background: #3c66cc;
-    display: flex;
-    margin-top: 20px;
+  background: #3c66cc;
+  display: flex;
+  margin-top: 20px;
 }
 
 .sidebar {
-    margin-right: 25px;
-    padding: 10px;
+  margin-right: 25px;
+  padding: 10px;
 }
 
 .sidebar-img {
-    width: 200px;
+  width: 200px;
 }
 
 .content {
-    flex: 1;
-    padding: 15px;
+  flex: 1;
+  padding: 15px;
 }
 
 /* interests section styles */
 #interests {
-    border: 8px silver ridge;
-    padding: 8px;
-    margin-top: 20px;
+  border: 8px silver ridge;
+  padding: 8px;
+  margin-top: 20px;
 }
 
-h2, h3 {
-    margin: 0px;
+h2,
+h3 {
+  margin: 0px;
 }
 
 /* Portfolio styles */
@@ -149,5 +150,96 @@ h2, h3 {
   .content {
     align-content: center;
     justify-content: center;
+  }
+}
+
+/* Slideshow styles - Legend of Zelda inspired */
+.slideshow-container {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+  background: linear-gradient(
+    to bottom,
+    #8b4513,
+    #d2b48c
+  ); /* Wood/parchment gradient */
+  border: 10px solid #654321; /* Brown border like wood */
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+.slide {
+  display: none;
+  text-align: center;
+}
+
+.slide img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border: 5px solid #ffd700; /* Gold border */
+  border-radius: 10px;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: #ffd700; /* Gold */
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background: #654321; /* Brown */
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: #8b4513; /* Darker brown */
+}
+
+.dots {
+  text-align: center;
+  padding: 20px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #654321;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #ffd700;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
   }
 }

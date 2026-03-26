@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery - Legend of Zelda Style</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="all-contents">
+      <nav>
+        <h1>Haley's First Website</h1>
+        <ul id="nav ul">
+          <li class="nav-li">
+            <a href="index.html">Home</a>
+          </li>
+          <li class="nav-li">
+            <a href="portfolio.html">Portfolio</a>
+          </li>
+          <li class="nav-li">
+            <a href="images.html">Gallery</a>
+          </li>
+        </ul>
+      </nav>
+
+      <main>
+        <div class="slideshow-container">
+          <div class="slide fade">
+            <img src="assets/beauty.JPG" alt="Beauty" />
+          </div>
+          <div class="slide fade">
+            <img src="assets/shape.JPG" alt="Shape" />
+          </div>
+          <div class="slide fade">
+            <img src="assets/you.JPG" alt="You" />
+          </div>
+          <div class="slide fade">
+            <img src="assets/texture.JPG" alt="Texture" />
+          </div>
+          <div class="slide fade">
+            <img src="assets/schoolspirit.JPG" alt="School Spirit" />
+          </div>
+
+          <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+          <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+
+        <div class="dots">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+          <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function changeSlide(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slide");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }
+    </script>
+  </body>
+</html>
